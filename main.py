@@ -49,6 +49,7 @@ def main() -> int:
         written = f.read()
     assert written == EXPECTED, "entry.txt does not match LINE"
     assert 1 <= len(LINE) <= 200, "line must be 1-200 characters"
+    assert LINE == LINE.strip() and "\n" not in LINE, "line must be one line with no surrounding whitespace"
     print("wrote %s (%d chars)" % (path, len(LINE)))
     return 0
 
